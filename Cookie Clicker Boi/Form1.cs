@@ -25,8 +25,12 @@ namespace Cookie_Clicker_Boi
             switch (next)
             {
                 case "GS":
-                c = new GameScreen();
-                break;
+                    c = new GameScreen();
+                    break;
+
+                case "SS":
+                    c - new StoreScreen();
+                    break;
             }
         }
 
