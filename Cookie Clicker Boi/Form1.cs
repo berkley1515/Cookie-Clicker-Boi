@@ -15,30 +15,36 @@ namespace Cookie_Clicker_Boi
         public Form1()
         {
             InitializeComponent();
-            GameScreen gs = new GameScreen();
-            this.Controls.Add(gs);
+            MenuScreen ms = new MenuScreen();
+            this.Controls.Add(ms);
         }
 
         public void switchScreen(String next, UserControl current)
         {
-            UserControl c = new GameScreen();
+            UserControl c = new MenuScreen();
             switch (next)
             {
+                case "MS":
+                    c = new MenuScreen();
+                    break;
+
                 case "GS":
                     c = new GameScreen();
                     break;
 
-                case "SS":
-                    c - new StoreScreen();
+                case "CS":
+                    c = new Controls();
                     break;
             }
+            Controls.Add(c);
+            Controls.Remove(current);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // Program goes directly to the GameScreen method on start
-            GameScreen gs = new GameScreen();
-            this.Controls.Add(gs);
+            MenuScreen ms = new MenuScreen();
+            this.Controls.Add(ms);
         }
     }
 }
